@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Cinemamon</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="title_home">Главная</string>
+    <string name="title_chat">Чат</string>
+    <string name="title_profil">Профиль</string>
+    <string name="text_namefilm">Chernobyl</string>
+    <string name="text_filmdescription">Chernobyl is a 2019 historical drama \n television miniseries that revolves around the \n Chernobyl disaster of 1986 and \n the cleanup efforts that followed.</string>
+    <string name="hbo">HBO</string>
+</resources>
