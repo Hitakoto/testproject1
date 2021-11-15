@@ -7,4 +7,7 @@
     <string name="text_namefilm">Chernobyl</string>
     <string name="text_filmdescription">Chernobyl is a 2019 historical drama \n television miniseries that revolves around the \n Chernobyl disaster of 1986 and \n the cleanup efforts that followed.</string>
     <string name="hbo">HBO</string>
+    <string name="buttonText_chernobyl">Смотреть трейлер</string>
+    <string name="text_message">Сообщения</string>
+    <string name="chernobyl">Chernobyl</string>
 </resources>

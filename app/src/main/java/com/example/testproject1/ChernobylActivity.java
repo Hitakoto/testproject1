@@ -2,34 +2,34 @@ package com.example.testproject1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.TargetApi;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.MediaController;
 import android.widget.Toast;
+import android.widget.VideoView;
+
+import java.lang.annotation.Target;
 
 public class ChernobylActivity extends AppCompatActivity {
 
-    WebView webchernobyl;
+    VideoView vidchernobyl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chernobyl);
 
-        webchernobyl = (WebView) findViewById(R.id.webchernobyl);
-        webchernobyl.setWebViewClient(new WebViewClient() {
-            @Override
-            public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                if (Uri.parse(url).getHost().equals("https://www.youtube.com/watch?v=s9APLXM9Ei8")) {
-                    Toast.makeText(ChernobylActivity.this, "Error", Toast.LENGTH_SHORT).show();
-                    return false;
-                }
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
-                return true;
-            }
-        });
+        vidchernobyl = (VideoView) findViewById(R.id.vidchernobyl);
+        Uri uri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.chernobyl);
+        vidchernobyl.setVideoURI(uri);
+        vidchernobyl.setMediaController(new MediaController(ChernobylActivity.this));
+        vidchernobyl.start();
     }
 }
