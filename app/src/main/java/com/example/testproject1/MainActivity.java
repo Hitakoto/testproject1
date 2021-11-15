@@ -13,13 +13,9 @@ import android.widget.Button;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class MainActivity extends AppCompatActivity implements  BottomNavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
     BottomNavigationView bottomNavigationView;
-    Button btnchernobyl;
-    Button btnlogout;
-
-    FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,12 +24,6 @@ public class MainActivity extends AppCompatActivity implements  BottomNavigation
 
         bottomNavigationView = findViewById(R.id.nav_view);
         bottomNavigationView.setOnNavigationItemSelectedListener(MainActivity.this);
-
-        btnchernobyl = FragmentHome.findViewById<Button>(R.id.btnchernobyl);
-        btnchernobyl.setOnClickListener(MainActivity.this);
-
-        btnlogout = FragmentHome.findViewById<Button>(R.id.btnchernobyl);
-        btnlogout.setOnClickListener(MainActivity.this);
     }
 
     private  boolean loadFragment (Fragment fragment) {
@@ -66,20 +56,5 @@ public class MainActivity extends AppCompatActivity implements  BottomNavigation
         }
 
         return loadFragment(fragment);
-    }
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.btnchernobyl:
-                Intent intent411 = new Intent(MainActivity.this, ChernobylActivity.class);
-                startActivity(intent411);
-                break;
-            case R.id.btnlogout:
-                mAuth.signOut();
-                Intent intent421 = new Intent(MainActivity.this, LoginActivity.class);
-                startActivity(intent421);
-                break;
-        }
     }
 }

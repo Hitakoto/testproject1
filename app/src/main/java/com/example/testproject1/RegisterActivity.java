@@ -18,8 +18,8 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    EditText email;
-    EditText password;
+    EditText email_register;
+    EditText password_register;
     TextView tvblog;
     Button btnreg;
 
@@ -33,8 +33,8 @@ public class RegisterActivity extends AppCompatActivity {
         tvblog = (TextView) findViewById(R.id.tvblog);
 
         btnreg = (Button) findViewById(R.id.btnreg);
-        email = (EditText) findViewById(R.id.email);
-        password = (EditText) findViewById(R.id.password);
+        email_register = (EditText) findViewById(R.id.email);
+        password_register = (EditText) findViewById(R.id.password);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -49,10 +49,10 @@ public class RegisterActivity extends AppCompatActivity {
         btnreg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (email.getText().toString().isEmpty() || password.getText().toString().isEmpty()) {
+                if (email_register.getText().toString().isEmpty() || password_register.getText().toString().isEmpty()) {
                     Toast.makeText(RegisterActivity.this, "Fields cannot be empty", Toast.LENGTH_SHORT).show();
                 } else {
-                    mAuth.signInWithEmailAndPassword(email.getText().toString(), password.getText().toString())
+                    mAuth.createUserWithEmailAndPassword(email_register.getText().toString(), password_register.getText().toString())
                             .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {

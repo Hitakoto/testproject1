@@ -23,10 +23,10 @@
 
     <Button
         android:id="@+id/btnchernobyl"
-        android:layout_width="195dp"
+        android:layout_width="134dp"
         android:layout_height="40dp"
         android:background="@drawable/styles"
-        android:text="Смотреть трейлер"
+        android:text="Смотреть"
         app:backgroundTint="#CC3628"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
